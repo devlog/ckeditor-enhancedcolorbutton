@@ -52,13 +52,13 @@ CKEDITOR.plugins.add( 'enhancedcolorbutton', {
 		// Modified: add new commands which set font color or background color with previous used color.
 		editor.addCommand( 'setForeFontColor', {
 				exec: function( editor, color ) {
-					color = color || ENHANCED_COLOR_BUTTON.previousForeColor;
+					color = ENHANCED_COLOR_BUTTON.previousForeColor || color;
 					CKEDITOR.tools.callFunction( ENHANCED_COLOR_BUTTON.applyColorStyle, color, 'fore' );
 				}
 			} );
 		editor.addCommand( 'setBackFontColor', {
 				exec: function( editor, color ) {
-					color = color || ENHANCED_COLOR_BUTTON.previousBackColor;
+					color = ENHANCED_COLOR_BUTTON.previousBackColor || color;
 					CKEDITOR.tools.callFunction( ENHANCED_COLOR_BUTTON.applyColorStyle, color, 'back' );
 				}
 			} );
